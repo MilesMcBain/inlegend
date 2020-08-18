@@ -2,13 +2,13 @@
 % Please edit documentation in R/legends.R
 \name{inset_themes}
 \alias{inset_themes}
-\alias{inlegend_dark}
-\alias{inlegend_light}
+\alias{inset_legend_dark}
+\alias{inset_legend_light}
 \title{inset map legend themes}
 \usage{
-inlegend_dark(location = "top-left")
+inset_legend_dark(location = "top-left")
 
-inlegend_light(location = "top-left")
+inset_legend_light(location = "top-left")
 }
 \arguments{
 \item{location}{the location to inset legends. One of "top-left", "top-right", "bottom-left", "bottom-right"}

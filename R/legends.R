@@ -8,7 +8,8 @@
 ##' @param location the location to inset legends. One of "top-left", "top-right", "bottom-left", "bottom-right"
 ##' @return `inlegend_dark` returns dark legend theme based on kepler.gl as an object of classes `theme` and `gg`.
 ##' @author Miles McBain
-inlegend_dark <- function(location = "top-left") {
+##' @export
+inset_legend_dark <- function(location = "top-left") {
   inlegend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
@@ -23,14 +24,15 @@ inlegend_dark <- function(location = "top-left") {
       colour = "#f0f0f0",
       margin = ggplot2::margin(0, 0, 5, 0)
       ),
-    legend.key = element_rect(fill = "#242730",
+    legend.key = ggplot2::element_rect(fill = "#242730",
                               colour = NA)
   )
 }
 
 ##' @rdname inset_themes
 ##' @return `inlegend_light` returns a light white legend theme as an object of classes `theme` and `gg`.
-inlegend_light <- function(location = "top-left"){
+##' @export
+inset_legend_light <- function(location = "top-left"){
   inlegend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
@@ -45,7 +47,7 @@ inlegend_light <- function(location = "top-left"){
       colour = "#2b2d2d",
       margin = ggplot2::margin(0, 0, 5, 0)
       ),
-    legend.key = element_rect(fill =  "#ffffff",
+    legend.key = ggplot2::element_rect(fill =  "#ffffff",
                               colour = NA)
   )
 }
@@ -109,7 +111,7 @@ globalVariables(".inlegend_positions", "inlegend")
 ##' @return a object of classes 'theme' and 'gg'
 ##' @author Miles McBain
 ##' @export
-inlegend_custom <- function(inlegend.location = c("top-right",
+inset_legend_custom <- function(inlegend.location = c("top-right",
                                                   "top-left",
                                                   "bottom-left",
                                                   "bottom-right"),
