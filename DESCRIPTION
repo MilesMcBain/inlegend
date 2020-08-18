@@ -1,18 +1,19 @@
 Package: inlegend
-Title: What the Package Does (One Line, Title Case)
+Title: Inset legend themes for ggplot2 maps
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Miles",
+           family = "McBain",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "miles.mcbain@gmail.com",
+           comment = c(ORCID = "0000-0003-2865-2548"))
+Description: Provides themes for making ggplot2 maps with inset legends and without whitespace around the margins.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     testthat
+Imports: 
+    ggplot2

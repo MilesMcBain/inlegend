@@ -9,7 +9,7 @@
 ##' @return `inlegend_dark` returns dark legend theme based on kepler.gl as an object of classes `theme` and `gg`.
 ##' @author Miles McBain
 ##' @export
-inset_legend_dark <- function(location = "top-left") {
+inset_legend_dark <- function(location = "top-right") {
   inset_legend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
@@ -32,7 +32,7 @@ inset_legend_dark <- function(location = "top-left") {
 ##' @rdname inset_themes
 ##' @return `inlegend_light` returns a light white legend theme as an object of classes `theme` and `gg`.
 ##' @export
-inset_legend_light <- function(location = "top-left"){
+inset_legend_light <- function(location = "top-right"){
   inset_legend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
