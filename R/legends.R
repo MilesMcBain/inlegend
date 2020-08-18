@@ -10,7 +10,7 @@
 ##' @author Miles McBain
 ##' @export
 inset_legend_dark <- function(location = "top-left") {
-  inlegend_custom(
+  inset_legend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
       colour = "#29323c",
@@ -33,7 +33,7 @@ inset_legend_dark <- function(location = "top-left") {
 ##' @return `inlegend_light` returns a light white legend theme as an object of classes `theme` and `gg`.
 ##' @export
 inset_legend_light <- function(location = "top-left"){
-  inlegend_custom(
+  inset_legend_custom(
     inlegend.location = location,
     legend.background = ggplot2::element_rect(
       colour = "#d3d5d6",
