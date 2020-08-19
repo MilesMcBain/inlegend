@@ -30,7 +30,6 @@ library(snapbox) ##remotes::install_github("anthonynorth/snapbox")
 library(ggplot2)
 library(ggspatial)
 library(sf)
-#> Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1
 library(inlegend)
 
 ggplot() +
@@ -38,9 +37,9 @@ ggplot() +
   layer_spatial(spData::cycle_hire_osm,
                 aes(colour = capacity),
                 alpha = 0.75) +
-  scale_colour_viridis_c() +
+  scale_colour_viridis_b() +
   inset_legend_dark("bottom-right") +
-  theme_cropped_map()
+  theme_cropped_map() 
 #> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
 #> ellps WGS 84 in CRS definition: +proj=merc +a=6378137 +b=6378137 +lat_ts=0
 #> +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs

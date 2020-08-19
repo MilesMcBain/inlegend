@@ -35,7 +35,7 @@ devtools::install_github("milesmcbain/inlegend")
 
 ## Example
 
-```{r example, fig.cap = "Bike share capacity, London. Via {spData}"}
+```{r example, fig.cap = "Bike share capacity, London. Via {spData}", dpi = 200, fig.width = 8}
 library(spData)
 library(snapbox) ##remotes::install_github("anthonynorth/snapbox")
 library(ggplot2)
@@ -48,9 +48,9 @@ ggplot() +
   layer_spatial(spData::cycle_hire_osm,
                 aes(colour = capacity),
                 alpha = 0.75) +
-  scale_colour_viridis_c() +
+  scale_colour_viridis_b() +
   inset_legend_dark("bottom-right") +
-  theme_cropped_map()
+  theme_cropped_map() 
 
 ```
 
