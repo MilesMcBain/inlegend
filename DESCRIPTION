@@ -14,6 +14,12 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat
+    testthat,
+    spData,
+    dplyr,
+    ggspatial,
+    vdiffr,
+    sf
 Imports: 
-    ggplot2
+    ggplot2,
+    magrittr

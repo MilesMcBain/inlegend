@@ -6,12 +6,20 @@
 \alias{inset_legend_light}
 \title{inset map legend themes}
 \usage{
-inset_legend_dark(location = "top-left")
+inset_legend_dark(location = "top-right", title_text_size = NA, text_size = NA)
 
-inset_legend_light(location = "top-left")
+inset_legend_light(
+  location = "top-right",
+  title_text_size = NA,
+  text_size = NA
+)
 }
 \arguments{
 \item{location}{the location to inset legends. One of "top-left", "top-right", "bottom-left", "bottom-right"}
+
+\item{title_text_size}{a convenience parameter for setting the size of the legend title text. For high resolution maps the defaults tend to be too small.}
+
+\item{text_size}{a convenience parameter for setting the size the legend key elements text. For high resolution maps the defaults tend to be too small.}
 }
 \value{
 \code{inlegend_dark} returns dark legend theme based on kepler.gl as an object of classes \code{theme} and \code{gg}.
@@ -24,6 +32,32 @@ Inset legend themes for ggplot2 maps
 \details{
 These themes move and restyle the ggplot2 legend to be more in line with mapping nroms.
 \code{ggplot2} are inset in the desired map corner. The legends are restyled to appear simpler and draw less attention when overlaid on maps.
+
+Convenience parameters are provided to tweak the size of legend text. The text style can be fully customised with the \code{ggplot2} theme engine. See examples.
+}
+\examples{
+library(spData)
+library(dplyr)
+library(ggplot2)
+library(ggspatial)
+
+coffee_prod <-
+  world \%>\%
+  left_join(coffee_data,
+    by = "name_long"
+  )
+ggplot() +
+  layer_spatial(
+    coffee_prod,
+    aes(fill = coffee_production_2017)
+  ) +
+  theme_cropped_map() +
+  inset_legend_light("bottom-left",
+    title_text_size = 10,
+    text_size = 8
+  ) +
+  theme(legend.title = element_text(face = "bold")) +
+  scale_fill_viridis_b()
 }
 \author{
 Miles McBain

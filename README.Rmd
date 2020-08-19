@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# inlegend
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`ggplot2` theming helpers for making static maps with inset legends:
+
+* `inset_legend_dark()`
+* `inset_legend_light()`
+* `theme_cropped_map()`
+
+## Installation
+
+From [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("milesmcbain/inlegend")
+```
+
+## Example
+
+```{r example, fig.cap = "Bike share capacity, London. Via {spData}"}
+library(spData)
+library(snapbox) ##remotes::install_github("anthonynorth/snapbox")
+library(ggplot2)
+library(ggspatial)
+library(sf)
+library(inlegend)
+
+ggplot() +
+  layer_mapbox(spData::cycle_hire_osm) +
+  layer_spatial(spData::cycle_hire_osm,
+                aes(colour = capacity),
+                alpha = 0.75) +
+  scale_colour_viridis_c() +
+  inset_legend_dark("bottom-right") +
+  theme_cropped_map()
+
+```
+
+
+
+
