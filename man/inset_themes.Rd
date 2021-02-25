@@ -6,12 +6,16 @@
 \alias{inset_legend_light}
 \title{inset map legend themes}
 \usage{
-inset_legend_dark(location = "top-right", title_text_size = NA, text_size = NA)
+inset_legend_dark(
+  location = "top-right",
+  title_text_size = NULL,
+  text_size = NULL
+)
 
 inset_legend_light(
   location = "top-right",
-  title_text_size = NA,
-  text_size = NA
+  title_text_size = NULL,
+  text_size = NULL
 )
 }
 \arguments{

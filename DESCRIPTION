@@ -22,4 +22,7 @@ Suggests:
     sf
 Imports: 
     ggplot2,
-    magrittr
+    magrittr,
+    ggfx (>= 0.0.0.9000)
+Remotes:  
+    thomasp85/ggfx

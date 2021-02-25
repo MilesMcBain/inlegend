@@ -42,16 +42,17 @@ library(ggplot2)
 library(ggspatial)
 library(sf)
 library(inlegend)
-
+library(stylebox)
 ggplot() +
-  layer_mapbox(spData::cycle_hire_osm) +
+  layer_mapbox(
+    spData::cycle_hire_osm
+  ) +
   layer_spatial(spData::cycle_hire_osm,
                 aes(colour = capacity),
                 alpha = 0.75) +
   scale_colour_viridis_b() +
-  inset_legend_dark("bottom-right") +
-  theme_cropped_map() 
-
+  inset_legend_dark("top-left") +
+  theme_cropped_map()
 ```
 
 

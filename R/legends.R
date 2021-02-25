@@ -3,8 +3,8 @@
 ##' These themes move and restyle the ggplot2 legend to be more in line with mapping nroms.
 ##' `ggplot2` are inset in the desired map corner. The legends are restyled to appear simpler and draw less attention when overlaid on maps.
 ##'
-##' Convenience parameters are provided to tweak the size of legend text. The text style can be fully customised with the `ggplot2` theme engine. See examples.  
-##' 
+##' Convenience parameters are provided to tweak the size of legend text. The text style can be fully customised with the `ggplot2` theme engine. See examples.
+##'
 ##' @name inset_themes
 ##' @title inset map legend themes
 ##' @param location the location to inset legends. One of "top-left", "top-right", "bottom-left", "bottom-right"
@@ -19,10 +19,15 @@ inset_legend_dark <- function(location = "top-right",
                               text_size = NULL) {
   inset_legend_custom(
     inlegend.location = location,
-    legend.background = ggplot2::element_rect(
-      colour = "#29323c",
-      fill = "#242730",
-      size = 0.6
+    legend.background = ggfx::with_shadow(
+      ggplot2::element_rect(
+        colour = "#242730",
+        fill = "#242730",
+        size = 0.6
+      ),
+      x_offset = -1,
+      y_offset = 1,
+      sigma = 4
     ),
     legend.text = ggplot2::element_text(
       colour = "#a0a7b4",
@@ -48,10 +53,15 @@ inset_legend_light <- function(location = "top-right",
                                text_size = NULL) {
   inset_legend_custom(
     inlegend.location = location,
-    legend.background = ggplot2::element_rect(
-      colour = "#d3d5d6",
-      fill = "#ffffff",
-      size = 0.6
+    legend.background = ggfx::with_shadow(
+      x_offset = -1,
+      y_offset = 1,
+      sigma = 2,
+      ggplot2::element_rect(
+        colour = "#ffffff",
+        fill = "#ffffff",
+        size = 0.6
+      )
     ),
     legend.text = ggplot2::element_text(
       colour = "#767d7d",

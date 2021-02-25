@@ -26,30 +26,38 @@ devtools::install_github("milesmcbain/inlegend")
 
 ``` r
 library(spData)
+#> To access larger datasets in this package, install the spDataLarge
+#> package with: `install.packages('spDataLarge',
+#> repos='https://nowosad.github.io/drat/', type='source')`
 library(snapbox) ##remotes::install_github("anthonynorth/snapbox")
 library(ggplot2)
 library(ggspatial)
 library(sf)
+#> Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1
 library(inlegend)
-
+library(stylebox)
 ggplot() +
-  layer_mapbox(spData::cycle_hire_osm) +
+  layer_mapbox(
+    spData::cycle_hire_osm
+  ) +
   layer_spatial(spData::cycle_hire_osm,
                 aes(colour = capacity),
                 alpha = 0.75) +
   scale_colour_viridis_b() +
-  inset_legend_dark("bottom-right") +
-  theme_cropped_map() 
-#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
-#> ellps WGS 84 in CRS definition: +proj=merc +a=6378137 +b=6378137 +lat_ts=0
-#> +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs
-#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
-#> datum WGS_1984 in CRS definition
-#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
-#> ellps WGS 84 in CRS definition: +proj=merc +a=6378137 +b=6378137 +lat_ts=0
-#> +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs
-#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO"): Discarded
-#> datum WGS_1984 in CRS definition
+  inset_legend_dark("top-left") +
+  theme_cropped_map()
+#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO", prefer_proj
+#> = prefer_proj): Discarded ellps WGS 84 in CRS definition: +proj=merc +a=6378137
+#> +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null
+#> +wktext +no_defs +type=crs
+#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO", prefer_proj =
+#> prefer_proj): Discarded datum World Geodetic System 1984 in CRS definition
+#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO", prefer_proj
+#> = prefer_proj): Discarded ellps WGS 84 in CRS definition: +proj=merc +a=6378137
+#> +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null
+#> +wktext +no_defs +type=crs
+#> Warning in showSRID(uprojargs, format = "PROJ", multiline = "NO", prefer_proj =
+#> prefer_proj): Discarded datum World Geodetic System 1984 in CRS definition
 ```
 
 <div class="figure">
