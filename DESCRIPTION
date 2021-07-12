@@ -1,6 +1,6 @@
 Package: inlegend
 Title: Inset legend themes for ggplot2 maps
-Version: 0.0.1.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Miles",
            family = "McBain",
@@ -14,15 +14,14 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat,
+    testthat (>= 3.0.0),
     spData,
     dplyr,
     ggspatial,
-    vdiffr,
-    sf
+    sf,
+    diffviewer
 Imports: 
     ggplot2,
     magrittr,
-    ggfx (>= 0.0.0.9000)
-Remotes:  
-    thomasp85/ggfx
+    ggfx
+Config/testthat/edition: 3

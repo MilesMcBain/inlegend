@@ -2,6 +2,7 @@ library(spData)
 library(dplyr)
 library(ggplot2)
 library(ggspatial)
+library(inlegend)
 
 coffee_prod <-
   world %>%
